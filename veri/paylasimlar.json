@@ -1,0 +1,85 @@
+{
+  "site": {
+    "baslik": "LinkedIn Taslak Panosu",
+    "altBaslik": "Fiziksel Yapay Zekâ / Sentetik Veri serisi — metin, görsel ve video tek yerde",
+    "guncelleme": "17 Eylül 2026"
+  },
+  "paylasimlar": [
+    {
+      "id": "paylasim-3",
+      "sira": "3/3",
+      "seri": "Fiziksel Yapay Zekâ / Sentetik Veri",
+      "baslik": "NVIDIA'nın veri ve simülasyon döngüsü",
+      "durum": "taslak",
+      "hazirlandi": "16 Eylül 2026",
+      "oncekiHalka": "Fiziksel yapay zekâ neden yalnızca gerçek dünya verileriyle eğitilemez? (3 Eyl 2026)",
+      "metinDosyasi": "veri/paylasim-3-metin.txt",
+      "altMetni": "Altı adımlı kapalı döngü şeması: fizik tabanlı simülasyon ortamından üretilen sentetik veri model eğitimine, oradan gerçek veriyle yapılan değerlendirmeye ve sahadaki robota aktarılıyor; gerçek dünyadan gelen geri besleme yeniden simülasyona dönerek halkayı kapatıyor.",
+      "gorsel": {
+        "dosya": "medya/paylasim-3/gorsel.png",
+        "ad": "paylasim-3-yeni-gorsel.png",
+        "olcu": "1080 × 1350 (4:5)",
+        "not": "Kabul kriterlerinin 6'sı da geçti: halka tek parça ve kapalı, hiç yazı/rakam yok, halkanın ortası boş, amber yalnızca 4. adımda."
+      },
+      "video": {
+        "dosya": "medya/paylasim-3/video.mp4",
+        "ad": "paylasim-3-yeni-video.mp4",
+        "olcu": "960 × 1200 (4:5) · 6,31 sn · 16 fps · 101 kare",
+        "not": "LinkedIn'in 3 saniye alt sınırını geçiyor; geometri klip boyunca sabit, robot kolunda bozulma yok."
+      },
+      "uyari": "LinkedIn tek gönderide görsel ve video birlikte yayınlamaz. Bir gönderi ya çoklu görsel, ya tek video olur. Önerilen: görsel bu paylaşımın asıl varlığı, video ayrı gönderi ya da yorum.",
+      "yerlesim": "LinkedIn düzeni sabit: metin → görsel → etkileşim. Başlık görsele bastırılmaz, metnin ilk satırında kalır.",
+      "kaynak": {
+        "alinti": "Using the first components available for the blueprint, NVIDIA generated 780,000 synthetic trajectories — the equivalent of 6,500 hours, or nine continuous months, of human demonstration data — in just 11 hours. Then, combining the synthetic data with real data, NVIDIA improved GR00T N1's performance by 40%, compared with using only real data.",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-isaac-gr00t-n1-open-humanoid-robot-foundation-model-simulation-frameworks",
+        "not": "Rakamlar 16 Eylül 2026'da resmî bültenden birebir teyit edildi."
+      },
+      "kontrolListesi": [
+        "Önceki paylaşımın tanımı tekrarlanmadı, tek cümleyle atıf yapıldı",
+        "Teknoloji listesiyle değil, fikirle açıldı",
+        "Sim-to-real sınırı açıkça söylendi",
+        "Sayısal iddialar NVIDIA'ya atfedildi ve kaynaktan doğrulandı",
+        "Kapanışta açık uçlu soru",
+        "2. paylaşımın verdiği söz (Omniverse, Isaac Sim, Cosmos) karşılandı",
+        "Abartılı başarı iddiası yok"
+      ],
+      "arsiv": [
+        {
+          "dosya": "medya/paylasim-3/gorsel-v1-vektor.png",
+          "ad": "v1 — elle yazılmış vektör",
+          "not": "16 Eyl, SVG kaynaktan üretildi. Türkçe etiketli. Sağlayıcı kotaları kapalıyken yapılan ilk sürüm."
+        },
+        {
+          "dosya": "medya/paylasim-3/adaylar/robotik_dongu_ilk_taslak.jpg",
+          "ad": "aday — ilk taslak",
+          "not": "Halka kapalı, altı aşama okunuyor, yazı yok. Oran 3:4 olduğu için elendi."
+        },
+        {
+          "dosya": "medya/paylasim-3/adaylar/robotik_dongu_ultra_gercekci.jpg",
+          "ad": "aday — ultra gerçekçi",
+          "not": "Videonun başlangıç karesi olarak kullanıldı. Döngü anlatmıyor, atmosfer görseli."
+        },
+        {
+          "dosya": "medya/paylasim-3/adaylar/robotik_dongu_3d_izometrik.jpg",
+          "ad": "aday — 3D izometrik",
+          "not": "Yol S şeklinde, halka kapanmıyor."
+        },
+        {
+          "dosya": "medya/paylasim-3/adaylar/robotik_dongu_vektorel_entegre.jpg",
+          "ad": "aday — vektörel entegre",
+          "not": "İçinde 1–6 rakamları var ve numaralandırma hatalı. 'Yazı yok' kuralını ihlal ediyor."
+        },
+        {
+          "dosya": "medya/paylasim-3/adaylar/robotik_dongu_ic_mekan.jpg",
+          "ad": "aday — iç mekân",
+          "not": "Sinematik ama döngü yok."
+        },
+        {
+          "dosya": "medya/paylasim-3/adaylar/robotik_dongu_capraz_perspektif.jpg",
+          "ad": "aday — çapraz perspektif",
+          "not": "Sinematik ama döngü yok."
+        }
+      ]
+    }
+  ]
+}

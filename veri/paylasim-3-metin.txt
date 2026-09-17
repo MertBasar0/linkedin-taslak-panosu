@@ -1,0 +1,29 @@
+NVIDIA'nın fiziksel yapay zekâdaki asıl yatırımı tek bir model değil, bir veri döngüsü.
+
+Önceki iki paylaşımda sentetik verinin ne olduğunu ve fiziksel yapay zekânın neden ona ihtiyaç duyduğunu anlatmıştım. Sıra, bu verinin pratikte nasıl üretildiğinde.
+
+NVIDIA'nın kurduğu döngü kabaca dört adımdan oluşuyor:
+
+• Omniverse ve Isaac Sim ile fizik kurallarına dayalı sanal ortamlar kuruluyor; robot, nesneler ve sensörler yalnızca görsel olarak değil davranışlarıyla da modelleniyor.
+
+• Işık, malzeme, nesne konumu, kamera açısı ve sürtünme gibi değişkenler sistematik olarak çeşitlendiriliyor. Böylece model tek bir sahneyi ezberlemek yerine varyasyona dayanıklı hâle geliyor.
+
+• Cosmos dünya modelleri, bu simülasyonları daha çeşitli ve daha gerçekçi veri kümelerine dönüştürüyor.
+
+• Üretilen veri, GR00T gibi robot modellerinin eğitiminde ve değerlendirilmesinde gerçek veriyle birlikte kullanılıyor.
+
+Ölçeğin ne anlama geldiğini NVIDIA'nın kendi rakamları iyi gösteriyor. Isaac GR00T Blueprint ile az sayıda insan gösteriminden yola çıkılarak 11 saatte 780.000 sentetik hareket yörüngesi üretildiği açıklandı; bu yaklaşık 6.500 saatlik, yani dokuz ay kesintisiz insan gösterimine karşılık geliyor. NVIDIA bu veriyi gerçek veriyle birlikte kullandığında GR00T N1'in performansının yalnızca gerçek veriye kıyasla %40 arttığını bildirdi.
+
+Burada asıl dikkat çekici olan sayının büyüklüğü değil, döngünün kendisi:
+
+Simülasyon → veri üretimi → model eğitimi → değerlendirme → gerçek dünyaya aktarım → geri besleme
+
+Bu halka kapandığı anda gerçek dünyada karşılaşılan her yeni durum simülasyona geri taşınabiliyor ve bir sonraki eğitimin girdisi hâline geliyor.
+
+Yine de bu, sentetik verinin sınırını ortadan kaldırmıyor. Simülasyon gerçekliği yeterince temsil etmiyorsa üretilen veri ölçeklenebilir ama yanıltıcı olur; model fiziksel dünya yerine simülasyonun kusurlarını öğrenir. Bu nedenle döngünün en kritik adımı veri üretimi değil, gerçek veriyle yapılan doğrulama.
+
+Bence fiziksel yapay zekâ yarışında belirleyici olan, kimin en büyük modeli eğittiği değil; kimin bu döngüyü daha hızlı ve daha güvenilir biçimde kapatabildiği olacak.
+
+Sizce bir robotik ekibi için asıl rekabet avantajı model mimarisinde mi, yoksa sahip olduğu veri ve doğrulama döngüsünde mi?
+
+#SyntheticData #PhysicalAI #NVIDIA #Robotics #Simulation
