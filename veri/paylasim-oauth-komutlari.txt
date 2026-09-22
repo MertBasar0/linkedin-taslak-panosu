@@ -1,0 +1,81 @@
+# OpenClaw Nemo — Gateway Token ve OAuth Bağlantı Komutları
+
+Bu dosya, Nemo ortamında Gateway erişim token'ı, Codex (ChatGPT aboneliği) ve Claude ACP (Claude Pro/Max aboneliği) için OAuth bağlantı komutlarını içerir.
+
+## cevizMain Gateway Erişim Token
+
+**Gateway URL:** `http://localhost:20110` (veya WSL IP:20110)
+
+**Bearer Token:**
+```
+d1505dcaa22afa4f38dc844c5dee1f9a03ef2f81feabe112
+```
+
+**Control UI Giriş:** Token alanına yukardaki değeri yapıştır → Giriş Yap
+
+**Tailscale URL (gelecekte):** `https://koltiginmasaustu.tail0289bf.ts.net:20110` (tailscale mode: on iken)
+
+---
+
+## Codex (ChatGPT Plus/Pro) — OAuth Bağlantısı
+
+```bash
+cd /home/mertb/.ocm/envs/nemo/.openclaw
+openclaw models auth login --provider openai-codex
+```
+
+**Ne olur:** Tarayıcı açılır → ChatGPT hesabınla giriş yap → "Allow" / "Authorize" de → Terminalde "Success" yazana kadar bekle.
+
+## Claude ACP (Claude Pro/Max) — OAuth Bağlantısı
+
+```bash
+cd /home/mertb/.ocm/envs/nemo/.openclaw
+openclaw models auth login --provider claude-cli
+```
+
+**Ne olur:** Tarayıcı açılır → Claude hesabınla giriş yap → "Allow" de → Terminalde "Success" yazana kadar bekle.
+
+## Gateway Yeniden Başlatma
+
+Her iki OAuth bağlantısı da başarılı olduktan sonra:
+
+```bash
+openclaw gateway restart
+```
+
+> Not: `OPENCLAW_SUPERVISOR_MODE=external` olduğu için bu komut hata verebilir. Control UI → Gateway sekmesi → Restart butonunu kullan.
+
+## Kontrol
+
+Bağlantı başarılı mı diye kontrol etmek için:
+
+```bash
+openclaw secrets list
+```
+
+Çıktıda `OPENAI_CODEX_TOKEN` ve `ANTHROPIC_CLAUDE_TOKEN` (veya benzeri) görünmeli.
+
+## Portal Üzerinden Erişim
+
+Mobil/Telefonundan:
+```
+http://127.0.0.1:42353/home/mertb/.ocm/envs/nemo/.openclaw/portals/oauth-ui?openclaw_portal=9e976b09ac4dc0d79529cb5799db499c7ac5758e3524fd9c67a660e988f9e213
+```
+
+Control UI Portals sayfasından da açılabilir.
+
+## Notlar
+
+- API key **gerekmez** — standart aboneliklerin (ChatGPT Plus/Pro, Claude Pro/Max) OAuth ile çalışır
+- Token'lar `~/.ocm/envs/nemo/.openclaw/agents/main/agent/openclaw-agent.sqlite` içinde secrets store'da saklanır
+- Codex ajanı: `codex/gpt-5.5` modeli, `codex` runtime
+- Claude ajanı: `anthropic/claude-opus-5` modeli, `claude-cli` runtime (ACP/acpx)
+
+## Sorun Giderme
+
+**"models auth login requires an interactive TTY"** hatası alırsan:
+- Bu komut terminalde (Control UI → Terminals → New Terminal) çalıştırılmalı
+- Bu sohbet (agent session) TTY desteklemez
+
+**"external supervisor"** hatası alırsan:
+- `openclaw gateway restart` yerine Control UI'dan restart et
