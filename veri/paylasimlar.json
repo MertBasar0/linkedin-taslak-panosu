@@ -2,12 +2,30 @@
   "site": {
     "baslik": "LinkedIn Taslak Panosu",
     "altBaslik": "Fiziksel Yapay Zekâ / Sentetik Veri serisi — metin, görsel ve video tek yerde",
-    "guncelleme": "17 Eylül 2026"
+    "guncelleme": "22 Eylül 2026"
   },
   "paylasimlar": [
     {
+      "id": "paylasim-oauth-komutlari",
+      "sira": "0/4",
+      "seri": "OpenClaw Setup",
+      "baslik": "cevizMain Gateway OAuth Bağlantı Komutları",
+      "durum": "sistem",
+      "hazirlandi": "22 Eylül 2026",
+      "oncekiHalka": null,
+      "metinDosyasi": "veri/paylasim-oauth-komutlari.txt",
+      "altMetni": "cevizMain (nemo) OpenClaw gateway'ine Codex (OpenAI) ve Claude (Anthropic) OAuth aracılığıyla bağlanmak için gerekli komutlar ve token.",
+      "gorsel": null,
+      "video": null,
+      "uyari": null,
+      "yerlesim": null,
+      "kaynak": null,
+      "kontrolListesi": [],
+      "arsiv": []
+    },
+    {
       "id": "paylasim-3",
-      "sira": "3/3",
+      "sira": "3/4",
       "seri": "Fiziksel Yapay Zekâ / Sentetik Veri",
       "baslik": "NVIDIA'nın veri ve simülasyon döngüsü",
       "durum": "taslak",

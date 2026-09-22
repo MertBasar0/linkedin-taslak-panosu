@@ -218,8 +218,29 @@ async function ciz() {
     } catch (_) { return ""; }
   }));
 
-  hedef.innerHTML = paylasimlar.map((p, i) => {
-    const metin = (metinler[i] || "").trim();
+  // Filtre dropdown'ını doldur
+  const filtreSelect = $("#filtreSelect");
+  if (filtreSelect) {
+    paylasimlar.forEach((p) => {
+      const opt = document.createElement("option");
+      opt.value = p.id;
+      opt.textContent = p.baslik;
+      filtreSelect.appendChild(opt);
+    });
+  }
+
+  // Sayfayı başlangıçta tüm paylaşımlarla çiz
+  cizPaylasimlari(paylasimlar, metinler, hedef);
+}
+
+function cizPaylasimlari(paylasimlar, metinler, hedef, filtreId = "") {
+  const gosterilecekler = filtreId
+    ? paylasimlar.filter(p => p.id === filtreId)
+    : paylasimlar;
+
+  hedef.innerHTML = gosterilecekler.map((p, _) => {
+    const indeks = paylasimlar.indexOf(p);
+    const metin = (metinler[indeks] || "").trim();
     metinDeposu.set(p.id, { metin, alt: p.altMetni || "" });
     return basligiCiz(p)
       + (metin ? metniCiz(p, metin) : "")
@@ -230,6 +251,38 @@ async function ciz() {
       + kaynagiCiz(p)
       + arsiviCiz(p);
   }).join("");
+}
+
+function filtreUygula() {
+  const filtreSelect = $("#filtreSelect");
+  const secilenId = filtreSelect.value;
+
+  // Veriyi yeniden yükle ve filtrele
+  fetch("veri/paylasimlar.json", { cache: "no-store" })
+    .then(r => r.json())
+    .then(veri => {
+      const paylasimlar = veri.paylasimlar || [];
+      const hedef = $("#icerik");
+
+      Promise.all(paylasimlar.map(async (p) => {
+        if (!p.metinDosyasi) return "";
+        try {
+          const y = await fetch(p.metinDosyasi, { cache: "no-store" });
+          return y.ok ? await y.text() : "";
+        } catch (_) { return ""; }
+      })).then(metinler => {
+        cizPaylasimlari(paylasimlar, metinler, hedef, secilenId);
+        if (secilenId) {
+          hedef.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    })
+    .catch(() => {
+      const hedef = $("#icerik");
+      hedef.innerHTML = `<div class="kart"><div class="govde hata">
+        <b>Filtre uygulanırken hata.</b>
+      </div></div>`;
+    });
 }
 
 /* ---------- olaylar ---------- */
