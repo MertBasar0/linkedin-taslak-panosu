@@ -1,0 +1,34 @@
+cevizMain Gateway OAuth Komutları
+=====================================
+
+Gateway URL: http://localhost:20110
+Bearer Token: d1505dcaa22afa4f38dc844c5dee1f9a03ef2f81feabe112
+
+Codex (OpenAI) OAuth Login:
+---------------------------
+curl -X POST http://localhost:20110/auth/oauth/login \
+  -H "Authorization: Bearer d1505dcaa22afa4f38dc844c5dee1f9a03ef2f81feabe112" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "provider": "openai-codex",
+    "agent": "codex",
+    "scope": "openai"
+  }'
+
+Claude (Anthropic) OAuth Login:
+--------------------------------
+curl -X POST http://localhost:20110/auth/oauth/login \
+  -H "Authorization: Bearer d1505dcaa22afa4f38dc844c5dee1f9a03ef2f81feabe112" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "provider": "claude-cli",
+    "agent": "claude",
+    "scope": "anthropic"
+  }'
+
+Gateway Bilgisi:
+----------------
+Ortam: nemo (cevizMain)
+Port: 20110
+Durum: Aktif
+Tüm komutlar Control UI → Terminals → Gateway Terminal'dan çalıştırılmalıdır.
