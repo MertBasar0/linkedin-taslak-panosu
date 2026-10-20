@@ -2,12 +2,30 @@
   "site": {
     "baslik": "LinkedIn Taslak Panosu",
     "altBaslik": "Fiziksel Yapay Zekâ / Sentetik Veri serisi — metin, görsel ve video tek yerde",
-    "guncelleme": "22 Eylül 2026"
+    "guncelleme": "20 Ekim 2026"
   },
   "paylasimlar": [
     {
-      "id": "paylasim-oauth-komutlari",
+      "id": "paylasim-oauth-zoho",
       "sira": "0/4",
+      "seri": "OpenClaw Setup",
+      "baslik": "Zoho Mail REST API OAuth Yetkilendirme",
+      "durum": "sistem",
+      "hazirlandi": "20 Ekim 2026",
+      "oncekiHalka": null,
+      "metinDosyasi": "veri/paylasim-oauth-zoho.txt",
+      "altMetni": "Zoho Mail REST API için OAuth yetkilendirme linki. Free plan'da IMAP/Forwarding çalışmadığı için REST API denemesi.",
+      "gorsel": null,
+      "video": null,
+      "uyari": null,
+      "yerlesim": null,
+      "kaynak": null,
+      "kontrolListesi": [],
+      "arsiv": []
+    },
+    {
+      "id": "paylasim-oauth-komutlari",
+      "sira": "1/4",
       "seri": "OpenClaw Setup",
       "baslik": "cevizMain Gateway OAuth Bağlantı Komutları",
       "durum": "sistem",
@@ -25,7 +43,7 @@
     },
     {
       "id": "paylasim-3",
-      "sira": "3/4",
+      "sira": "2/4",
       "seri": "Fiziksel Yapay Zekâ / Sentetik Veri",
       "baslik": "NVIDIA'nın veri ve simülasyon döngüsü",
       "durum": "taslak",

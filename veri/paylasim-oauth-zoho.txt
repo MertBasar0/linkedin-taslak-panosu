@@ -1,0 +1,15 @@
+Zoho Mail REST API OAuth Yetkilendirme URL'si
+
+Bu linki tıklayarak Zoho Mail REST API için OAuth yetkilendirme işlemini başlatabilirsiniz.
+
+OAuth URL:
+https://accounts.zoho.eu/oauth/v2/auth?client_id=1000.K3UXYBO0FOO133T30K4U3N2U1L3PDQ&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A53682&scope=ZohoMail.messages.READ+ZohoMail.messages.CREATE+ZohoMail.accounts.READ+ZohoMail.folders.READ&access_type=offline&prompt=consent
+
+Kullanım:
+1. Bu linki tarayıcıda açın
+2. Zoho hesabınızla giriş yapın (mert@basarlabs.com.tr)
+3. "Accept" / "Kabul Et" butonuna tıklayın
+4. Yönlendirme sonucunda adres çubuğundaki `code=` parametresini kopyalayın
+5. Bu kodu token almak için kullanın
+
+Not: Redirect URI `http://127.0.0.1:53682` local callback için. Tarayıcı "Bu siteye ulaşılamıyor" hatası verse bile adres çubuğundaki `code=` parametresini kopyalayın.
